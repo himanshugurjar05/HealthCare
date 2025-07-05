@@ -22,9 +22,10 @@ app.use(cors())
 app.use(bodyParser.json())
 
 //Apis-------------------
-// app.get("/api/docterlist", (req, res)=>{
-//   res.json(Doctors)
-// })
+app.get('/', (req, res) => {
+  res.json('Welcome to APIs.........');
+});
+
 
 app.use('/api/user', UserRouter)
 app.use('/api/doctor', DoctorRouter)
