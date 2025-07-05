@@ -30,7 +30,7 @@ const router = Router();
 router.get('/', usercontroller.getAllUser);
 router.get('/:id', usercontroller.getUserById);
 router.post('/login', usercontroller.loginUser);
-router.post('/signup', usercontroller.createUser);
+router.post('/signUp', usercontroller.createUser);
 router.put('/:id', usercontroller.updatedUser);
 router.delete('/:id', usercontroller.deletedUser);
 
