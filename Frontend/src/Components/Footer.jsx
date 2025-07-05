@@ -41,10 +41,10 @@ const Footer = () => {
             <ul className="space-y-4">
               {['About Us', 'Our Services', 'Find a Doctor', 'Book Appointment'].map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-blue-100/80 hover:text-blue-300 transition-colors duration-200 flex items-center space-x-2">
+                  <li className="text-blue-100/80 hover:text-blue-300 transition-colors duration-200 flex items-center space-x-2">
                     <Shield className="w-4 h-4" />
                     <span>{link}</span>
-                  </a>
+                  </li>
                 </li>
               ))}
             </ul>
@@ -55,15 +55,15 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Contact Us</h3>
             <ul className="space-y-4">
               <li>
-                <a href="tel:+11234567890" className="text-blue-100/80 hover:text-blue-300 transition-colors duration-200 flex items-center space-x-2">
+                <li className="text-blue-100/80 hover:text-blue-300 transition-colors duration-200 flex items-center space-x-2">
                   <Phone className="w-4 h-4" />
                   <span>+1 (123) 456-7890</span>
-                </a>
+                </li>
               </li>
               <li>
-                <a href="mailto:support@healthcare.com" className="text-blue-100/80 hover:text-blue-300 transition-colors duration-200 flex items-center space-x-2">
+                <a href="himanshu.gurjar7999@gmail.com" className="text-blue-100/80 hover:text-blue-300 transition-colors duration-200 flex items-center space-x-2">
                   <Mail className="w-4 h-4" />
-                  <span>support@healthcare.com</span>
+                  <span>himanshu.gurjar7999@gmail.com</span>
                 </a>
               </li>
               <li className="flex items-start space-x-2 text-blue-100/80">
