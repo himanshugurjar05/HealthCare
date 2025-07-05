@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+const API_URI = import.meta.env.VITE_API_URI;
 
 export default function HealthPackage() {
   const [formdata, setFormData] = useState([]);
@@ -7,7 +8,7 @@ export default function HealthPackage() {
   useEffect(() => {
     async function getdata() {
       try {
-        const Data = await axios.get('http://localhost:5500/api/package');
+        const Data = await axios.get(`${API_URI}/package`);
         setFormData(Data.data);
       } catch (error) {
         console.error("Error fetching data:", error);

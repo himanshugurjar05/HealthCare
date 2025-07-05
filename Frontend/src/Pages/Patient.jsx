@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {CloudDownload, Trash2, BedIcon} from 'lucide-react'
+const API_URI = import.meta.env.VITE_API_URI;
  
 export default function PatientList({totalPatients, setTotalPatients}) {
 
@@ -9,7 +10,7 @@ export default function PatientList({totalPatients, setTotalPatients}) {
   useEffect(() => {
     const fetchPatients = async () => {
       try {
-        const res = await axios.get("http://localhost:5500/api/appointment");
+        const res = await axios.get(`${API_URI}/appointment`);
         // console.log(res.data);
         setPatient(res.data);
         setTotalPatients(res.data.length);
@@ -23,7 +24,7 @@ export default function PatientList({totalPatients, setTotalPatients}) {
   
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5500/api/appointment/${id}`);
+      await axios.delete(`${API_URI}/appointment/${id}`);
       const updatedList = patient.filter(p => p._id !== id);
       setPatient(updatedList);
       setTotalPatients(updatedList.length);

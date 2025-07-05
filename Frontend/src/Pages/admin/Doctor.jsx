@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+const API_URI = import.meta.env.VITE_API_URI;
 
 export default function CreateDoctor({totalDoctors, setTotalDoctors}) {
   const [adminformData, setadminformData] = useState({
@@ -23,7 +24,7 @@ export default function CreateDoctor({totalDoctors, setTotalDoctors}) {
 
     try {
       const res = await axios.post(
-        'http://localhost:5500/api/doctor/create',
+        `${API_URI}/doctor/create`,
         adminformData,
         {
           headers: {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
+const API_URI = import.meta.env.VITE_API_URI;
 
 export default function AppointmentForm() {
   const navigate = useNavigate()
@@ -25,7 +26,7 @@ export default function AppointmentForm() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5500/api/appointment/create', {
+      const response = await axios.post(`${API_URI}/appointment/create`, {
         ...formData,
         phoneNo: Number(formData.phoneNo), // Ensure number
         prefferdDate: Number(formData.prefferdDate.replaceAll('-', '')), // Convert date to number

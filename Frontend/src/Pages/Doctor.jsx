@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Calendar, MapPin, Award, Clock, Search } from "lucide-react";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+const API_URI = import.meta.env.VITE_API_URI;
 
 export default function Doctors({ setIndex }) {
 
@@ -12,7 +13,7 @@ export default function Doctors({ setIndex }) {
 
   useEffect(() => {
     async function fetchData() {
-      let response = await axios.get("http://localhost:5500/api/doctor")
+      let response = await axios.get(`${API_URI}/doctor`)
       setDoctors(response.data)
     }
     fetchData()

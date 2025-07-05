@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+const API_URI = import.meta.env.VITE_API_URI;
+
 
 export default function Login({ setLoggedIn }) {
   const navigate = useNavigate();
@@ -24,7 +26,7 @@ export default function Login({ setLoggedIn }) {
     }
     
     try {
-      const Res = await axios.post('http://localhost:5500/api/user/login', formData);
+      const Res = await axios.post(`${API_URI}/user/login`, formData);
       const { token, user } = Res.data;
 
      // Check if selected role matches actual user role
