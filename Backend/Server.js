@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 
 
 app.use('/user', UserRouter)
-app.use('doctor', DoctorRouter)
+app.use('/doctor', DoctorRouter)
 app.use('/appointment', AppointmentRouter)
 app.use('/package', DiseasePackageRouter)
 
