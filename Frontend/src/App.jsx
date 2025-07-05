@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-route
 import Navbar from './Components/Navbar.jsx';
 import Footer from './Components/Footer.jsx';
 import Login from './Components/Login.jsx';
-import Signup from './Components/SignUp.jsx';
+import SignUp from './Components/SignUp.jsx';
 import Dashboard from './Pages/Deashboard.jsx';
 import Appointment from './Pages/Appointment.jsx';
 import Patient from './Pages/Patient.jsx';
@@ -86,7 +86,7 @@ const [totalDoctors, setTotalDoctors] = useState(() => {
           {/* Always show login first */}
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
-          <Route path="/SignUp" element={<Signup />} />
+          <Route path="/SignUp" element={<SignUp />} />
 
           {/* Normal user routes */}
           <Route
