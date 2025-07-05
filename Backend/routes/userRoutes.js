@@ -27,10 +27,16 @@ const router = Router();
 //   );
 
 // Other routes
-router.get('/', usercontroller.getAllUser);
-router.get('/:id', usercontroller.getUserById);
-router.post('/login', usercontroller.loginUser);
+
+
+
+//Static routes
 router.post('/signUp', usercontroller.createUser);
+router.post('/login', usercontroller.loginUser);
+router.get('/', usercontroller.getAllUser);
+
+//Dynamic routes
+router.get('/:id', usercontroller.getUserById);
 router.put('/:id', usercontroller.updatedUser);
 router.delete('/:id', usercontroller.deletedUser);
 
