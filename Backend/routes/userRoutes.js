@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import usercontroller from '../controller/usercontroller.js';
+import usercontroller from '../controller/userController.js';
 // import jwt from 'jsonwebtoken';
 
 // import passport from 'passport';
