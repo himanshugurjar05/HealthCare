@@ -27,10 +27,10 @@ app.get('/', (req, res) => {
 });
 
 
-app.use('/api/user', UserRouter)
-app.use('/api/doctor', DoctorRouter)
-app.use('/api/appointment', AppointmentRouter)
-app.use('/api/package', DiseasePackageRouter)
+app.use('/user', UserRouter)
+app.use('doctor', DoctorRouter)
+app.use('/appointment', AppointmentRouter)
+app.use('/package', DiseasePackageRouter)
 
 
 
