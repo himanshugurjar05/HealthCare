@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {CloudDownload, Trash2} from 'lucide-react'
+import {CloudDownload, Trash2, BedIcon} from 'lucide-react'
  
 export default function PatientList({totalPatients, setTotalPatients}) {
 
@@ -70,6 +70,10 @@ export default function PatientList({totalPatients, setTotalPatients}) {
                   </div>
                   
                   <div className="space-y-4 mb-6">
+                    <span className="text-xl text-gray-950">
+                        BedID: #{(index + 1).toString().padStart(0, '0')}
+                      </span>
+
                     <InfoRow icon="mail" label="Email" text={e.email} />
                     <InfoRow icon="phone" label="Phone" text={e.phoneNo} />
                     <InfoRow icon="calendar" label="Date" text={e.prefferdDate} />

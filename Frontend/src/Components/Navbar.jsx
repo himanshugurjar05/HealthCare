@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Users, Calendar, UserRound, Menu, X, LogIn, UserPlus } from 'lucide-react';
+import { Home, Users, Calendar, UserRound, Menu, X, LogIn, UserPlus, Contact, Contact2 } from 'lucide-react';
+import { use } from 'react';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,6 +14,7 @@ export default function Navbar() {
     { path: '/doctor', label: 'Doctors', icon: Users },
     { path: '/appointment', label: 'Appointments', icon: Calendar },
     { path: '/patient', label: 'Patients', icon: UserRound },
+    { path: '/contact', label: 'Contact', icon: Contact },
   ];
   
   return (
@@ -24,7 +26,7 @@ export default function Navbar() {
             <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
               <span className="text-blue-600 font-bold text-xl">H</span>
             </div>
-            <h1 className="text-white font-bold text-xl">Health Dashboard</h1>
+            <h1 className="text-white font-bold text-xl">Health Care</h1>
           </div>
 
           {/* Desktop Navigation */}

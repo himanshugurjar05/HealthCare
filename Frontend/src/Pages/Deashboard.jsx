@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from "react";
 import { Users, UserPlus, Calendar, DollarSign, Activity, Clock, Award, Heart } from "lucide-react";
-// import { useNavigate } from "react-router-dom";
+// import {Link} from "react-router-dom";
 
 export default function Dashboard({totalPatients, totalDoctors}) {
   // let navigate = useNavigate()
@@ -17,60 +17,11 @@ export default function Dashboard({totalPatients, totalDoctors}) {
   useEffect(() => {
     const dummyBills = 500; // ₹500 per patient (adjust as needed)
     setStats({
-      totalDoctors,
+      totalDoctors:5,
       totalPatients,totalbed: 100 - totalPatients,
       AppointmentFees: `₹${dummyBills.toLocaleString()}`
     });
   }, [totalPatients, totalDoctors]);
-
-
-  // useEffect(() => {
-  //   const savedCount = parseInt(localStorage.getItem("totalPatients")) || 0;
-
-  //   if (!hasUpdated.current && currentCount > 0) {
-  //     const updatedCount = savedCount + currentCount;
-
-  //     setStats(prev => ({
-  //       ...prev,
-  //       totalPatients: updatedCount,
-  //       totalbed: 100 - updatedCount
-
-  //     }));
-
-  //     localStorage.setItem("totalPatients", updatedCount);
-  //     hasUpdated.current = true;
-
-  //     // remove count from URL
-  //     window.history.replaceState({}, '', '/h');
-  //   } else {
-  //     setStats(prev => ({
-  //       ...prev,
-  //       totalPatients: savedCount,
-  //       totalbed: 100 - savedCount
-  //     }));
-  //   }
-  // }, [currentCount]);
-
-  
-  
-//  let [Images,setImages] = useState([
-//       {
-//       image:"https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8yNV9zaW1wbGVfM2RfaWxsdXN0cmF0aW9uX29mX2FfcmVjb3Zlcnlfcm9vbV93aV80ZjhkNDIwNC02N2I4LTQwMDQtYTBlNy05YjljMjIyMzE2ZGVfMS5qcGc.jpg",
-//       image:"https://media.istockphoto.com/id/1903423742/photo/medical-team-meeting.jpg?s=2048x2048&w=is&k=20&c=qK4SGw8THH8cH4fqDF5I9B1tepCdoHVZf6N_KC-DzYI=",
-//       image:"https://plus.unsplash.com/premium_photo-1681843129112-f7d11a2f17e3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//       image:"https://plus.unsplash.com/premium_photo-1682130157004-057c137d96d5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-//       },
-//   ])
-
-//   useEffect(() => {
-//     let interval = setInterval(() => {
-//       setImages((prev) => {
-//         let first = prev.shift();
-//         return [...prev, first];
-//       });
-//     }, 3000)
-//     return () => clearInterval(interval);
-//   })
   
 
   return (

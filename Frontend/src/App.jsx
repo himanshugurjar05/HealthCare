@@ -10,6 +10,7 @@ import Appointment from './Pages/Appointment.jsx';
 import Patient from './Pages/Patient.jsx';
 import Doctor from './Pages/Doctor.jsx';
 import Package from './Pages/HealthPackage.jsx';
+import Contact from './Pages/Contact.jsx';
 
 // Admin routes
 import AdminNavbar from './Pages/admin/AdminNavbar.jsx';
@@ -31,7 +32,8 @@ function PrivateRoute({ loggedIn, allowedRoles, children }) {
 // Layout with Navbar/Footer logic
 function LayoutWrapper({ children, loggedIn }) {
   const location = useLocation();
-  const isAuthPage = location.pathname === '/login' || location.pathname === '/SignUp';
+  // const isAuthPage = location.pathname === '/login' || location.pathname === '/SignUp';
+  const isAuthPage = ['/login', '/signup'].includes(location.pathname.toLowerCase());
   const isAdminRoute = location.pathname.startsWith('/admin');
 
   return (
@@ -72,6 +74,9 @@ const [totalDoctors, setTotalDoctors] = useState(() => {
   useEffect(() => {
     localStorage.setItem("totalDoctors", totalDoctors.toString());
   }, [totalDoctors]);
+
+
+
 
   return (
     <BrowserRouter>
@@ -123,6 +128,14 @@ const [totalDoctors, setTotalDoctors] = useState(() => {
             element={
               <PrivateRoute loggedIn={loggedIn} allowedRoles={['user']}>
                 <Appointment index={index} />
+              </PrivateRoute>
+            }
+          />
+         <Route
+            path="/Contact"
+            element={
+              <PrivateRoute loggedIn={loggedIn} allowedRoles={['user']}>
+                <Contact index={index} />
               </PrivateRoute>
             }
           />

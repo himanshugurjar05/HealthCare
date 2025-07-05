@@ -1,5 +1,5 @@
-import diseaseController from '../controller/diseasePackageController.js'
 import {Router} from 'express'
+import diseaseController from '../controller/diseasePackageController.js'
 
 let router = Router()
 
