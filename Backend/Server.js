@@ -38,3 +38,8 @@ app.use('/package', DiseasePackageRouter)
 app.listen(process.env.PORT, ()=>{
   console.log("Server is run on 5500")
 })
+
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
